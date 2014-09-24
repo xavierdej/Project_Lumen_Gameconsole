@@ -1,0 +1,25 @@
+Project Lumen Game Console
+
+General description:
+
+	The game console we developed runs in an interpreted language called 'Lumen'. Also called to life by us, because of several reasons: it adds a nice facet to our assignment, its a new challenge for us and who doesn't want a programming language of his own! Keep in mind we need a preprocessing of the bare 'Lumen' code on a slightly more powerfull machine to generate the required bytecode. This is necessary to keep the memory footprint of interpreter as small as possible.
+	The console consists of several inputs and outputs: 
+		Inputs:
+			- SD card (SPI) for reading the bytecode game code into the system
+			- wired console('s) for controlling the gameplay (I2C or SPI?)			
+////////--->					(N: capbility for multiplayer? Can this cause performance issues?)
+		Outputs:
+			- Standard VGA output (through I2C and second controller as graphics card)
+			- support for LCD display, support for LED dot display
+			- audio (3,5mm jack)
+
+		Specs and conventions:
+			- PIC18F452 for graphics
+			- PIC18F4620 for interpreter and I/O
+			- Ram for running game: 2048 bytes?
+
+
+Software blocks:
+	- VGA driver
+	- LCD driver
+	- Graphics control
