@@ -28,6 +28,11 @@ Software blocks:
 	- I2C driver (graphics card)
 
 VGA driver
+	description:
+		the VGA drivers sole purpose is to convert the data in the vram to correct timed VGA signals
+		for this it needs to know the screen size in pixels, to compute te timings
+		possibly it could contain hard coded data to fill the unused space of the screen
+////////--->					//N: Implement different modes? Stretch vs ConstantRatio
 	requires:
 		- 
 	provides:
@@ -40,13 +45,18 @@ VGA driver
 		- int* vram
 
 Graphics control
+	description:
+		The grapics control has several tasks, first is receiving drawdata over I2C, second is compute and fill the vram with content
+		It has build in support to draw some basic forms
+		The I2C interface triggers an interrupt, in the ISR the vram is updated with the command
+
 	requires:
 		- int* setScreensize(int x, int y)
 		- void setContent(*int vram)
 		- void writePixel(int max_x, int max_y, bool color)
 
 		- int* memAlloc(int numberOfBytes)
-		//N: some help would be realy nice! Do we need to provide our own memAlloc implementation?
+////////--->		//N: some help would be realy nice! Do we need to provide our own memAlloc implementation?
 	provides:
 		- void writeSprite(int name, *data)
 		- void drawSprite(int name, int x, int y)
