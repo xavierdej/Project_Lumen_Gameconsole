@@ -21,5 +21,43 @@ General description:
 
 Software blocks:
 	- VGA driver
+	- ram manager
 	- LCD driver
 	- Graphics control
+	- SPI driver (SD card)
+	- I2C driver (graphics card)
+
+VGA driver
+	requires:
+		- 
+	provides:
+		- int* setScreensize(int x, int y) //needed for creation of vram
+		- void setContent(*int vram)
+		- void writePixel(int max_x, int max_y, bool color) //color means black or white (on or off if you will)
+	private properties:
+		- int max_x
+		- int max_y
+		- int* vram
+
+Graphics control
+	requires:
+		- int* setScreensize(int x, int y)
+		- void setContent(*int vram)
+		- void writePixel(int max_x, int max_y, bool color)
+
+		- int* memAlloc(int numberOfBytes)
+		//N: some help would be realy nice! Do we need to provide our own memAlloc implementation?
+	provides:
+		- void writeSprite(int name, *data)
+		- void drawSprite(int name, int x, int y)
+		- void drawCircle(int x, int y, int radius, bool color)
+		- void drawRect(int x1, int y1, int x2, int y2, bool color)
+		- void fillCircle(int x, int y, int radius, bool color)
+		- void fillRect(int x1, int y1, int x2, int y2, bool color)
+		- void drawLine(int x1, int y1, int x2, int y2, bool color)
+		- void drawPixel(int x, int y, int color)
+		- void clearScreen()
+	private properties:
+		- int max_x
+		- int max_y
+		- int* vram
