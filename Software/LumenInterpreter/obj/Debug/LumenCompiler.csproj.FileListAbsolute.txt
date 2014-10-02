@@ -1,0 +1,27 @@
+C:\Users\Nick\Documents\Visual Studio 2013\Projects\LumenInterpreter\bin\Debug\LumenInterpreter.exe.config
+C:\Users\Nick\Documents\Visual Studio 2013\Projects\LumenInterpreter\bin\Debug\LumenInterpreter.exe
+C:\Users\Nick\Documents\Visual Studio 2013\Projects\LumenInterpreter\bin\Debug\LumenInterpreter.pdb
+C:\Users\Nick\Documents\Visual Studio 2013\Projects\LumenInterpreter\obj\Debug\LumenCompiler.csprojResolveAssemblyReference.cache
+C:\Users\Nick\Documents\Visual Studio 2013\Projects\LumenInterpreter\obj\Debug\LumenCompiler.Form1.resources
+C:\Users\Nick\Documents\Visual Studio 2013\Projects\LumenInterpreter\obj\Debug\LumenCompiler.Properties.Resources.resources
+C:\Users\Nick\Documents\Visual Studio 2013\Projects\LumenInterpreter\obj\Debug\LumenCompiler.csproj.GenerateResource.Cache
+C:\Users\Nick\Documents\Visual Studio 2013\Projects\LumenInterpreter\obj\Debug\LumenInterpreter.exe
+C:\Users\Nick\Documents\Visual Studio 2013\Projects\LumenInterpreter\obj\Debug\LumenInterpreter.pdb
+C:\Users\Nick\Dropbox\Self\LumenInterpreter\bin\Debug\LumenInterpreter.exe.config
+C:\Users\Nick\Dropbox\Self\LumenInterpreter\obj\Debug\LumenInterpreter.exe
+C:\Users\Nick\Dropbox\Self\LumenInterpreter\obj\Debug\LumenInterpreter.pdb
+C:\Users\Nick\Dropbox\Self\LumenInterpreter\obj\Debug\LumenCompiler.csprojResolveAssemblyReference.cache
+C:\Users\Nick\Dropbox\Self\LumenInterpreter\obj\Debug\LumenCompiler.Form1.resources
+C:\Users\Nick\Dropbox\Self\LumenInterpreter\obj\Debug\LumenCompiler.Properties.Resources.resources
+C:\Users\Nick\Dropbox\Self\LumenInterpreter\obj\Debug\LumenCompiler.csproj.GenerateResource.Cache
+C:\Users\Nick\Dropbox\Self\LumenInterpreter\bin\Debug\LumenInterpreter.exe
+C:\Users\Nick\Dropbox\Self\LumenInterpreter\bin\Debug\LumenInterpreter.pdb
+C:\Users\Nick\Dropbox\4MI2EO\Programmeertechnieken\Lumen\Project_Lumen_Gameconsole\Software\LumenInterpreter\bin\Debug\LumenInterpreter.exe.config
+C:\Users\Nick\Dropbox\4MI2EO\Programmeertechnieken\Lumen\Project_Lumen_Gameconsole\Software\LumenInterpreter\obj\Debug\LumenInterpreter.exe
+C:\Users\Nick\Dropbox\4MI2EO\Programmeertechnieken\Lumen\Project_Lumen_Gameconsole\Software\LumenInterpreter\obj\Debug\LumenInterpreter.pdb
+C:\Users\Nick\Dropbox\4MI2EO\Programmeertechnieken\Lumen\Project_Lumen_Gameconsole\Software\LumenInterpreter\bin\Debug\LumenInterpreter.exe
+C:\Users\Nick\Dropbox\4MI2EO\Programmeertechnieken\Lumen\Project_Lumen_Gameconsole\Software\LumenInterpreter\bin\Debug\LumenInterpreter.pdb
+C:\Users\Nick\Dropbox\4MI2EO\Programmeertechnieken\Lumen\Project_Lumen_Gameconsole\Software\LumenInterpreter\obj\Debug\LumenCompiler.csprojResolveAssemblyReference.cache
+C:\Users\Nick\Dropbox\4MI2EO\Programmeertechnieken\Lumen\Project_Lumen_Gameconsole\Software\LumenInterpreter\obj\Debug\LumenCompiler.Form1.resources
+C:\Users\Nick\Dropbox\4MI2EO\Programmeertechnieken\Lumen\Project_Lumen_Gameconsole\Software\LumenInterpreter\obj\Debug\LumenCompiler.Properties.Resources.resources
+C:\Users\Nick\Dropbox\4MI2EO\Programmeertechnieken\Lumen\Project_Lumen_Gameconsole\Software\LumenInterpreter\obj\Debug\LumenCompiler.csproj.GenerateResource.Cache
