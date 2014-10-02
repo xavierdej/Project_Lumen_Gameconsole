@@ -2,6 +2,13 @@ FRS VGA
 
 General description:
 
-The graphics control is located entirely in a separate microcontroller. It's tasks consist of: writing the content on the screen, recievive this content over an SPI connection and do the required computations to maintain the correct timing for the VGA protocol.
+The graphics control is located entirely in a separate microcontroller. Its tasks consist of: writing the content on the screen, recieve this content over an SPI connection and do the required computations to maintain the correct timing for the VGA protocol.
 
-The graphics control makes use of maps, filled with tiles and sprites. Therefore it provides several commands to fill and edit the graphical content.
+The graphics control makes use of maps, filled with tiles and sprites. To accomplish this it provides several commands to fill and edit the graphical content.
+The SPI communication is used to set up a byte oriented protocol. It had commands to initialize sprites and tiles, to fill the map and to draw sprites on the screen at user specified locations.
+
+The output of the graphics control is send to a standard VGA display (640x480 60Hz). The actual resolution of the graphics control is reduced to 128x96, this is done for performance issues. 
+
+Inputs and outputs:
+The SPI interface uses 2 I/O lines: Clock and MasterOut/SlaveIn.
+The VGA output takes 5 I/O lines: red, green, blue, horizontal sync and vertical sync. 
