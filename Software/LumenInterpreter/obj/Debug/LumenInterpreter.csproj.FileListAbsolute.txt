@@ -1,0 +1,9 @@
+C:\Users\Nick\Documents\Visual Studio 2013\Projects\LumenInterpreter\bin\Debug\LumenInterpreter.exe.config
+C:\Users\Nick\Documents\Visual Studio 2013\Projects\LumenInterpreter\bin\Debug\LumenInterpreter.exe
+C:\Users\Nick\Documents\Visual Studio 2013\Projects\LumenInterpreter\bin\Debug\LumenInterpreter.pdb
+C:\Users\Nick\Documents\Visual Studio 2013\Projects\LumenInterpreter\obj\Debug\LumenInterpreter.csprojResolveAssemblyReference.cache
+C:\Users\Nick\Documents\Visual Studio 2013\Projects\LumenInterpreter\obj\Debug\LumenInterpreter.Form1.resources
+C:\Users\Nick\Documents\Visual Studio 2013\Projects\LumenInterpreter\obj\Debug\LumenInterpreter.Properties.Resources.resources
+C:\Users\Nick\Documents\Visual Studio 2013\Projects\LumenInterpreter\obj\Debug\LumenInterpreter.csproj.GenerateResource.Cache
+C:\Users\Nick\Documents\Visual Studio 2013\Projects\LumenInterpreter\obj\Debug\LumenInterpreter.exe
+C:\Users\Nick\Documents\Visual Studio 2013\Projects\LumenInterpreter\obj\Debug\LumenInterpreter.pdb
