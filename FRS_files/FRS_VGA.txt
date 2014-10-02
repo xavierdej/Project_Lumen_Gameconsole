@@ -4,10 +4,61 @@ General description:
 
 The graphics control is located entirely in a separate microcontroller. Its tasks consist of: writing the content on the screen, recieve this content over an SPI connection and do the required computations to maintain the correct timing for the VGA protocol.
 
-The graphics control makes use of maps, filled with tiles and sprites. To accomplish this it provides several commands to fill and edit the graphical content.
+The graphics control makes use of maps, filled with sprites. To accomplish this it provides several commands to fill and edit the graphical content.
 The SPI communication is used to set up a byte oriented protocol. It had commands to initialize sprites and tiles, to fill the map and to draw sprites on the screen at user specified locations.
 
-The output of the graphics control is send to a standard VGA display (640x480 60Hz). The actual resolution of the graphics control is reduced to 128x96, this is done for performance issues. 
+Commands:
+
+Command: Initalize sprite
+
+	Usage: 0x00 0xNN 0xCC 0xXX ... 0xXX (8 bytes denoting content)
+
+	Description: First byte means command initialize sprite, the second byte tells the graphics control which sprite to initialize, following by a byte denoting the color and after that 8 bytes to describe the sprite. The sprite has an 8x8 size, and the bytes are arranged as following:
+		(B = byte, b = bit)
+
+				B0b0	B0b1	B0b2	B0b3	B0b4	B0b5	B0b6	B0b7
+
+				B1b0	B1b1	B1b2	B1b3	B1b4	B1b5	B1b6	B1b7
+				
+				B2b0	B2b1	B2b2	B2b3	B2b4	B2b5	B2b6	B2b7
+				
+				B3b0	B3b1	B3b2	B3b3	B3b4	B3b5	B3b6	B3b7
+				
+				B4b0	B4b1	B4b2	B4b3	B4b4	B4b5	B4b6	B4b7
+				
+				B5b0	B5b1	B5b2	B5b3	B5b4	B5b5	B5b6	B5b7
+				
+				B6b0	B6b1	B6b2	B6b3	B6b4	B6b5	B6b6	B6b7
+				
+				B7b0	B7b1	B7b2	B7b3	B7b4	B7b5	B7b6	B7b7
+
+	Sprites initialized can be used to put on the screen when the user wants. They can be used multiple times. They are just set ready in memory to gain speed when the game is running.
+
+Command: Set sprite position
+
+	Usage: 0x02 0xNN 0xMM 0xXX 0xYY
+
+	Description: The first byte is the command set sprite position. After that we specify which sprite to use from memory, and we tell the graphics control in which slot to put it. The slots are the sprites that are checked when drawing the pixels.
+
+Command: Clear sprite position
+
+	Usage: 0x04 0xMM
+
+	Description: The first byte is the command delete a sprite from the drawing list. The second byte tells the graphics control which slot to clear. That way it is possible remove a sprite from the screen.
+
+Command: Set map position
+
+	Usage: 0x06 0xNN 0xXX 0xYY
+
+	Description: The first byte is the command for setting a sprite to a map tile. The second byte says what sprite to use and the following bytes tell what position to put it. The positions are rounded to the lower multiplicative of 8.
+
+Command: Set map
+
+	Usage: 0x08 0xXX ... 0xXX (192 bytes)
+
+	Description: The first byte tells the graphics control to fill the background map. After that it expects 192 bytes telling which sprites to put where. The same layout scheme is used as for the content of the sprites. First from left to right, then from top to bottom.
+
+The output of the graphics control is send valid signals to a standard VGA display (640x480 60Hz). The actual resolution of the graphics control is reduced to 128x96, this is done for performance issues. 
 
 Inputs and outputs:
 The SPI interface uses 2 I/O lines: Clock and MasterOut/SlaveIn.
