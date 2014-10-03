@@ -9,7 +9,7 @@ The SPI communication is used to set up a byte oriented protocol. It had command
 
 Commands:
 
-Command: Initalize sprite
+Command: Initialize sprite
 
 	Usage: 0x02 0xNN 0xCC 0xXX ... 0xXX (8 bytes denoting content)
 
@@ -46,7 +46,7 @@ Command: Clear sprite position
 
 	Description: The first byte is the command delete a sprite from the drawing list. The second byte tells the graphics control which slot to clear. That way it is possible remove a sprite from the screen.
 
-Command: Set map position
+Command: Set tile position
 
 	Usage: 0x08 0xNN 0xXX 0xYY
 
@@ -58,11 +58,29 @@ Command: Set map
 
 	Description: The first byte tells the graphics control to fill the background map. After that it expects 192 bytes telling which sprites to put where. The same layout scheme is used as for the content of the sprites. First from left to right, then from top to bottom.
 
-Command: Text mode
+Command: Text stream mode 
 
 	Usage: 0x0C 0xXX 0xYY 0xTT ... 0xTT 0x00 (until 0x00)
 
 	Description: The first byte activates the textmode, the following bytes tell where to start writing on the screen. This is rounded of to the lower multiplicative of 8. The bytes received next are used as text input, using the ascii table. On receiving a null value the graphics control ends the text mode and waits for a new command. 
+
+Command: Text memory mode
+
+	Usage: 0x0E 0xXX 0xYY 0xNN
+
+	Description: The first byte activates the textmode, the following bytes tell where to start writing on the screen. This is rounded of to the lower multiplicative of 8. The fourth and last byte tells the graphics control which string to use from memory.
+
+Command: Load map
+
+	Usage: 0x10 0xNN
+
+	Description: This command loads the map in memory to the buffer. Thus overwriting the entire the buffer and doing so, it removes all text from the screen. The second byte tells the graphics control what map number to use.
+
+Command: Start graphics
+	
+	Usage: 0x12
+
+	Description: This command starts the rendering and activates the VGA output signals. Delaying this operation allows to preload the data in memory whitout having to worry about timing issues.
 
 The output of the graphics control is send valid signals to a standard VGA display (640x480 60Hz). The actual resolution of the graphics control is reduced to 128x96, this is done for performance issues. 
 
