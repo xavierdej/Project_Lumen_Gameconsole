@@ -11,7 +11,7 @@ Commands:
 
 Command: Initalize sprite
 
-	Usage: 0x00 0xNN 0xCC 0xXX ... 0xXX (8 bytes denoting content)
+	Usage: 0x02 0xNN 0xCC 0xXX ... 0xXX (8 bytes denoting content)
 
 	Description: First byte means command initialize sprite, the second byte tells the graphics control which sprite to initialize, following by a byte denoting the color and after that 8 bytes to describe the sprite. The sprite has an 8x8 size, and the bytes are arranged as following:
 		(B = byte, b = bit)
@@ -32,31 +32,37 @@ Command: Initalize sprite
 				
 				B7b0	B7b1	B7b2	B7b3	B7b4	B7b5	B7b6	B7b7
 
-	Sprites initialized can be used to put on the screen when the user wants. They can be used multiple times. They are just set ready in memory to gain speed when the game is running.
+	Sprites initialized can be used to put on the screen when the user wants. They can be used multiple times. They are just set ready in memory to gain speed when the program is running.
 
 Command: Set sprite position
 
-	Usage: 0x02 0xNN 0xMM 0xXX 0xYY
+	Usage: 0x04 0xNN 0xMM 0xXX 0xYY
 
 	Description: The first byte is the command set sprite position. After that we specify which sprite to use from memory, and we tell the graphics control in which slot to put it. The slots are the sprites that are checked when drawing the pixels.
 
 Command: Clear sprite position
 
-	Usage: 0x04 0xMM
+	Usage: 0x06 0xMM
 
 	Description: The first byte is the command delete a sprite from the drawing list. The second byte tells the graphics control which slot to clear. That way it is possible remove a sprite from the screen.
 
 Command: Set map position
 
-	Usage: 0x06 0xNN 0xXX 0xYY
+	Usage: 0x08 0xNN 0xXX 0xYY
 
 	Description: The first byte is the command for setting a sprite to a map tile. The second byte says what sprite to use and the following bytes tell what position to put it. The positions are rounded to the lower multiplicative of 8.
 
 Command: Set map
 
-	Usage: 0x08 0xXX ... 0xXX (192 bytes)
+	Usage: 0x0A 0xXX ... 0xXX (192 bytes)
 
 	Description: The first byte tells the graphics control to fill the background map. After that it expects 192 bytes telling which sprites to put where. The same layout scheme is used as for the content of the sprites. First from left to right, then from top to bottom.
+
+Command: Text mode
+
+	Usage: 0x0C 0xXX 0xYY 0xTT ... 0xTT 0x00 (until 0x00)
+
+	Description: The first byte activates the textmode, the following bytes tell where to start writing on the screen. This is rounded of to the lower multiplicative of 8. The bytes received next are used as text input, using the ascii table. On receiving a null value the graphics control ends the text mode and waits for a new command. 
 
 The output of the graphics control is send valid signals to a standard VGA display (640x480 60Hz). The actual resolution of the graphics control is reduced to 128x96, this is done for performance issues. 
 
